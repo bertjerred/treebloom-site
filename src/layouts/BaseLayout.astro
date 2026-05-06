@@ -1,6 +1,6 @@
 ---
 // BaseLayout.astro
-import { ClientRouter } from 'astro:transitions';
+import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
 
 interface Props {
@@ -8,9 +8,9 @@ interface Props {
 	description?: string;
 }
 
-const { 
+const {
 	title = "TreeBloom | Educational Software",
-	description = "TreeBloom provides foundational tools for educators, built for clarity and scale."
+	description = "TreeBloom provides foundational tools for educators, built for clarity and scale.",
 } = Astro.props;
 
 const pathname = new URL(Astro.request.url).pathname;
@@ -35,15 +35,30 @@ const currentPath = pathname.replace(/\/$/, "") || "/";
 	<body>
 		<header>
 			<a href="/" class="logo-link">
-				<img src="/treebloom512-nobg.png" alt="TreeBloom Logo" class="logo" />
+				<img
+					src="/treebloom512-nobg-white.png"
+					alt="TreeBloom Logo"
+					class="logo"
+				/>
 			</a>
 			<h1>TreeBloom</h1>
 			<p>Software tools for educators.</p>
-			
+
 			<nav>
-				<a href="/about" class={currentPath === "/about" ? "active" : ""}>About</a>
-				<a href="/apps" class={currentPath.startsWith("/apps") ? "active" : ""}>Apps</a>
-				<a href="/contact" class={currentPath === "/contact" ? "active" : ""}>Contact</a>
+				<a
+					href="/about"
+					class={currentPath === "/about" ? "active" : ""}>About</a
+				>
+				<a
+					href="/apps"
+					class={currentPath.startsWith("/apps") ? "active" : ""}
+					>Apps</a
+				>
+				<a
+					href="/contact"
+					class={currentPath === "/contact" ? "active" : ""}
+					>Contact</a
+				>
 			</nav>
 		</header>
 
