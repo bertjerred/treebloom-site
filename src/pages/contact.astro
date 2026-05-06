@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Contact | TreeBloom">
+	<section>
+		<h2>Get in Touch</h2>
+		<p>
+			Have questions or feedback? We'd love to hear from you. Fill out the
+			form below and we'll get back to you as soon as possible.
+		</p>
+
+		<div
+			class="form-container"
+			style="margin-top: 2.5rem; background: var(--section-bg); border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--section-border); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);"
+		>
+			<iframe
+				src="https://docs.google.com/forms/d/e/1FAIpQLSfwTBXJlhNGUgSHKnCX5wJEuPDH3b9fsMZ8UUSk8iJf2wJglQ/viewform?embedded=true"
+				width="100%"
+				height="800"
+				frameborder="0"
+				marginheight="0"
+				marginwidth="0"
+				style="display: block;"
+			>
+				Loading…
+			</iframe>
+		</div>
+	</section>
+</BaseLayout>

@@ -1,0 +1,228 @@
+:root {
+  --primary: #86d262;
+  --primary-glow: rgba(134, 210, 98, 0.3);
+  --bg-color: #f8fafc;
+  --text-color: #1e293b;
+  --text-muted: #64748b;
+  --header-border: #86d262;
+  --section-bg: rgba(255, 255, 255, 0.5);
+  --section-border: rgba(0, 0, 0, 0.05);
+  --max-width: 800px;
+  --transition-speed: 0.3s;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #0f172a;
+    --text-color: #f1f5f9;
+    --text-muted: #94a3b8;
+    --primary: #a3e635;
+    --primary-glow: rgba(163, 230, 53, 0.2);
+    --section-bg: rgba(30, 41, 59, 0.5);
+    --section-border: rgba(255, 255, 255, 0.1);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 4rem 2rem;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color var(--transition-speed) ease;
+}
+
+header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border-bottom: 2px solid var(--header-border);
+  padding-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+    width: 0;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    left: 100%;
+    width: 0;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--text-color) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+header p {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+section {
+  padding: 2.5rem;
+  background: var(--section-bg);
+  border-radius: 1.5rem;
+  border: 1px solid var(--section-border);
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -20px var(--primary-glow);
+  border-color: var(--primary);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+h2::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
+p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+a:not(.logo-link)::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--primary);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 2rem 1rem;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+}
+
+.logo {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 2rem auto;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+nav {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+nav a {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  height: 3px;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--primary);
+}
+
+nav a.active::after {
+  transform: scaleX(1);
+}

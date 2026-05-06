@@ -1,47 +1,14 @@
 ---
-// index.astro
-// You can import global stylesheets here later
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>TreeBloom | Educational Software</title>
-	</head>
-	<body
-		style="font-family: system-ui, sans-serif; background: #F3F4F6; color: #2C3333; padding: 4rem;"
-	>
-		<header
-			style="max-width: 800px; margin: 0 auto; border-bottom: 2px solid #86d262; padding-bottom: 2rem;"
-		>
-			<h1>TreeBloom</h1>
-			<p style="font-size: 1.2rem; opacity: 0.8;">
-				Foundational tools for educators. Built for clarity and scale.
-			</p>
-		</header>
-
-		<main
-			style="max-width: 800px; margin: 3rem auto; display: flex; flex-direction: column; gap: 2rem;"
-		>
-			<section>
-				<h2>For Educators</h2>
-				<p>
-					Software designed to get out of your way. Explore our <a
-						href="/apps"
-						style="color: #86d262;">active tools</a
-					>.
-				</p>
-			</section>
-
-			<section>
-				<h2>For Investors</h2>
-				<p>
-					TreeBloom is currently incubating scalable, pedagogical
-					software solutions. Detailed roadmaps available upon
-					request.
-				</p>
-			</section>
-		</main>
-	</body>
-</html>
+<BaseLayout>
+	<section>
+		<h2>Welcome to TreeBloom</h2>
+		<p>
+			We build tools that empower educators to focus on what matters most:
+			their students. Our software is designed for clarity, efficiency,
+			and pedagogical impact.
+		</p>
+	</section>
+</BaseLayout>
