@@ -27,43 +27,87 @@ const currentPath = pathname.replace(/\/$/, "") || "/";
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
 			rel="stylesheet"
 		/>
 		<ClientRouter />
 	</head>
 	<body>
 		<header>
-			<a href="/" class="logo-link">
+			<a href="/" class="brand">
 				<img
 					src="/treebloom512-nobg-white.png"
 					alt="TreeBloom Logo"
 					class="logo"
 				/>
-				<h1>TreeBloom</h1>
+				<div class="brand-text">
+					<h1>TreeBloom</h1>
+					<p>Software and Media for Education</p>
+				</div>
 			</a>
-			<p>Software and Media for Education</p>
+			<button class="menu-btn" id="menu-btn">MENU &#9776;</button>
+		</header>
 
-			<nav>
-				<a
-					href="/about"
-					class={currentPath === "/about" ? "active" : ""}>About</a
-				>
+		<div id="overlay" class="overlay"></div>
+		<div id="sidebar" class="sidebar">
+			<div class="sidebar-header">
+				<button class="close-btn" id="close-btn">&times;</button>
+			</div>
+			<div class="sidebar-content">
+				<a href="/" class={currentPath === "/" ? "active" : ""}>Home</a>
 				<a
 					href="/apps"
 					class={currentPath.startsWith("/apps") ? "active" : ""}
 					>Apps</a
 				>
 				<a
+					href="/media"
+					class={currentPath === "/media" ? "active" : ""}>Media</a
+				>
+				<a
 					href="/contact"
 					class={currentPath === "/contact" ? "active" : ""}
 					>Contact</a
 				>
-			</nav>
-		</header>
+			</div>
+		</div>
 
 		<main>
 			<slot />
 		</main>
+
+		<footer>
+			&copy; {new Date().getFullYear()} Bert Jerred. All rights reserved.
+		</footer>
+
+		<script>
+			function toggleMenu() {
+				document.getElementById("sidebar")?.classList.toggle("open");
+				document.getElementById("overlay")?.classList.toggle("open");
+			}
+
+			document
+				.getElementById("menu-btn")
+				?.addEventListener("click", toggleMenu);
+			document
+				.getElementById("close-btn")
+				?.addEventListener("click", toggleMenu);
+			document
+				.getElementById("overlay")
+				?.addEventListener("click", toggleMenu);
+
+			// Handle Astro transitions
+			document.addEventListener("astro:after-swap", () => {
+				document
+					.getElementById("menu-btn")
+					?.addEventListener("click", toggleMenu);
+				document
+					.getElementById("close-btn")
+					?.addEventListener("click", toggleMenu);
+				document
+					.getElementById("overlay")
+					?.addEventListener("click", toggleMenu);
+			});
+		</script>
 	</body>
 </html>
