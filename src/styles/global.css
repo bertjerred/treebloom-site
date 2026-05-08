@@ -114,6 +114,9 @@ section {
   border-radius: 1.5rem;
   border: 1px solid var(--section-border);
   backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 

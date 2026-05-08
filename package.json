@@ -14,7 +14,7 @@
     "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^13.3.1",
+    "@astrojs/cloudflare": "^13.5.0",
     "astro": "^6.2.2"
   },
   "devDependencies": {

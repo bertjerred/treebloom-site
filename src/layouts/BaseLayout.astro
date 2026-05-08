@@ -9,8 +9,8 @@ interface Props {
 }
 
 const {
-	title = "TreeBloom | Educational Software",
-	description = "TreeBloom provides foundational tools for educators, built for clarity and scale.",
+	title = "TreeBloom | Software and Media for Education",
+	description = "TreeBloom provides software and media for education, built for clarity and scale.",
 } = Astro.props;
 
 const pathname = new URL(Astro.request.url).pathname;
@@ -40,9 +40,9 @@ const currentPath = pathname.replace(/\/$/, "") || "/";
 					alt="TreeBloom Logo"
 					class="logo"
 				/>
+				<h1>TreeBloom</h1>
 			</a>
-			<h1>TreeBloom</h1>
-			<p>Software tools for educators.</p>
+			<p>Software and Media for Education</p>
 
 			<nav>
 				<a
