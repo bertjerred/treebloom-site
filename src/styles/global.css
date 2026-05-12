@@ -55,6 +55,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 }
 
 .brand {
@@ -104,10 +105,7 @@ h1 {
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 0;
-  background: linear-gradient(135deg, var(--text-color) 0%, var(--primary) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-color);
   display: inline-block;
   line-height: 1;
 }
@@ -123,13 +121,15 @@ header p {
   background: transparent;
   border: 2px solid var(--primary);
   color: var(--primary);
-  padding: 8px 16px;
+  padding: 8px 12px;
   font-family: inherit;
+  font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
   border-radius: 8px;
   transition: all 0.2s ease;
   white-space: nowrap;
+  line-height: 1;
 }
 
 .menu-btn:hover {
@@ -315,16 +315,7 @@ a:hover::after {
   }
 }
 
-.logo {
-  display: block;
-  width: 64px;
-  height: 64px;
-  transition: transform 0.3s ease;
-}
 
-.logo:hover {
-  transform: scale(1.1) rotate(5deg);
-}
 
 footer {
   text-align: center;

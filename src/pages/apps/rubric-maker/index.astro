@@ -5,12 +5,141 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 <BaseLayout title="Rubric Maker | TreeBloom">
 	<section>
 		<h2>Rubric Maker</h2>
-		<p>
-			Welcome to the Rubric Maker. This tool is currently under development. 
-			Check back soon for updates!
-		</p>
-		<p style="margin-top: 1rem;">
+		<div class="embed-container">
+			<div class="video-wrapper">
+				<iframe 
+					src="https://www.youtube.com/embed/qJGSo4DfHlI" 
+					title="Rubric Maker Overview" 
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+					referrerpolicy="strict-origin-when-cross-origin" 
+					allowfullscreen
+				></iframe>
+			</div>
+			<div class="badge-wrapper">
+				<ms-store-badge 
+					productid="9PD2ZB4V076P" 
+					window-mode="direct" 
+					theme="auto" 
+					language="en-us" 
+					animation="on"
+				></ms-store-badge>
+			</div>
+		</div>
+		<p class="privacy-link">
 			<a href="/apps/rubric-maker/privacy">View Privacy Policy</a>
 		</p>
 	</section>
+
+	<section class="screenshots">
+		<h2>Screenshots</h2>
+		<div class="screenshot-grid">
+			<div class="screenshot-item">
+				<img src="/images/apps/rubric-maker/1.png" alt="Rubric Maker Screenshot 1" loading="lazy" />
+			</div>
+			<div class="screenshot-item">
+				<img src="/images/apps/rubric-maker/2.png" alt="Rubric Maker Screenshot 2" loading="lazy" />
+			</div>
+			<div class="screenshot-item">
+				<img src="/images/apps/rubric-maker/3.png" alt="Rubric Maker Screenshot 3" loading="lazy" />
+			</div>
+			<div class="screenshot-item">
+				<img src="/images/apps/rubric-maker/4.png" alt="Rubric Maker Screenshot 4" loading="lazy" />
+			</div>
+			<div class="screenshot-item">
+				<img src="/images/apps/rubric-maker/5.png" alt="Rubric Maker Screenshot 5" loading="lazy" />
+			</div>
+			<div class="screenshot-item">
+				<img src="/images/apps/rubric-maker/6.png" alt="Rubric Maker Screenshot 6" loading="lazy" />
+			</div>
+			<div class="screenshot-item">
+				<img src="/images/apps/rubric-maker/7.png" alt="Rubric Maker Screenshot 7" loading="lazy" />
+			</div>
+			<div class="screenshot-item">
+				<img src="/images/apps/rubric-maker/8.png" alt="Rubric Maker Screenshot 8" loading="lazy" />
+			</div>
+			<div class="screenshot-item">
+				<img src="/images/apps/rubric-maker/9.png" alt="Rubric Maker Screenshot 9" loading="lazy" />
+			</div>
+			<div class="screenshot-item">
+				<img src="/images/apps/rubric-maker/word.png" alt="Word Export Screenshot" loading="lazy" />
+			</div>
+			<div class="screenshot-item">
+				<img src="/images/apps/rubric-maker/excel.png" alt="Excel Export Screenshot" loading="lazy" />
+			</div>
+		</div>
+	</section>
+
+<script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
+
+<style>
+	.embed-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+		margin: 2rem 0;
+	}
+
+	.video-wrapper {
+		width: 100%;
+		max-width: 800px;
+		aspect-ratio: 16 / 9;
+		border-radius: 1rem;
+		overflow: hidden;
+		box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+		border: 1px solid var(--section-border);
+	}
+
+	.video-wrapper iframe {
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+
+	.badge-wrapper {
+		display: flex;
+		justify-content: center;
+		min-height: 80px;
+	}
+
+	.privacy-link {
+		margin-top: 2rem;
+		text-align: center;
+	}
+
+	.screenshot-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+		gap: 1.5rem;
+		margin-top: 1rem;
+	}
+
+	.screenshot-item {
+		background: var(--section-bg);
+		border: 1px solid var(--section-border);
+		border-radius: 12px;
+		overflow: hidden;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	}
+
+	.screenshot-item:hover {
+		transform: scale(1.03);
+		border-color: var(--primary);
+		box-shadow: 0 10px 15px -3px var(--primary-glow), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	}
+
+	.screenshot-item img {
+		width: 100%;
+		height: auto;
+		display: block;
+		object-fit: cover;
+	}
+
+	@media (max-width: 480px) {
+		.screenshot-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
 </BaseLayout>
